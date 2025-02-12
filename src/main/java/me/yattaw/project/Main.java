@@ -22,5 +22,13 @@ public class Main {
         String formattedDate = now.format(formatter);
         System.out.println("Current Time: " + formattedDate);
 
+        // Get the runtime object
+        Runtime runtime = Runtime.getRuntime();
+        // Get the current amount of free memory in the JVM (in bytes)
+        long freeMemory = runtime.freeMemory();
+        // Convert bytes to megabytes for easier reading
+        double freeMemoryInMB = freeMemory / (1024.0 * 1024.0);
+        // Display the free memory in MB
+        System.out.println("Current free memory: " + String.format("%.2f", freeMemoryInMB) + " MB");
     }
 }
